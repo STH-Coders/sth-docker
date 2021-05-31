@@ -1,0 +1,36 @@
+{
+  "name": "sth-docker",
+  "version": "1.0.0",
+  "description": "Dockerized Wordpress Environment w/ MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/STHCoders/sth-docker.git"
+  },
+  "keywords": [
+    "docker",
+    "wordpress",
+    "docker-compose",
+    "mysql",
+    "container",
+    "containerized",
+    "dockerized"
+  ],
+  "author": "killshot13 <dmreh@outlook.com> (Michael Rehnert)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/STHCoders/sth-docker/issues"
+  },
+  "homepage": "https://github.com/STHCoders/sth-docker#readme",
+  "devDependencies": {
+    "markdown-magic": "2.0.0",
+    "markdown-magic-directory-tree": "1.2.3"
+  },
+  "dependencies": {
+    "mj-pa": "1.3.1",
+    "prettier": "2.3.0"
+  }
+}
