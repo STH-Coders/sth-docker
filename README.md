@@ -18,12 +18,12 @@ services:
   wordpress:
     image: wordpress:latest
     ports:
-      - 80:80
+      - 81:81
     restart: always
     ...
 ```
 
-If deployed, `docker-compose` will map port 80 of the DockerizedWordpress container to port 80 of the host platform.
+If deployed, `docker-compose` will map port 81 of the Dockerized Wordpress container to port 81 of the host platform.
 
 ### Install WP Dependencies
 
@@ -45,11 +45,11 @@ Check containers are running and the port mapping:
 ```bash
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
-5fbb4181a069        wordpress:latest    "docker-entrypoint.s…"   35 seconds ago      Up 34 seconds       0.0.0.0:80->80/tcp    wordpress-mysql_wordpress_1
+5fbb4181a069        wordpress:latest    "docker-entrypoint.s…"   35 seconds ago      Up 34 seconds       0.0.0.0:81->81/tcp    wordpress-mysql_wordpress_1
 e0884a8d444d        mysql:8.0.19        "docker-entrypoint.s…"   35 seconds ago      Up 34 seconds       3306/tcp, 33060/tcp   wordpress-mysql_db_1
 ```
 
-Navigate to `http://localhost:80` in your web browser to access Wordpress. You should see the screen about the "famous 5-minute WP installation."
+Navigate to `http://localhost:81` in your web browser to access Wordpress. You should see the screen about the "famous 5-minute WP installation."
 
 ### Stop/Remove Working Container
 

@@ -27,10 +27,8 @@
   "homepage": "https://github.com/STHCoders/sth-docker#readme",
   "devDependencies": {
     "markdown-magic": "2.0.0",
-    "markdown-magic-directory-tree": "1.2.3"
-  },
-  "dependencies": {
+    "markdown-magic-directory-tree": "1.2.3",
     "mj-pa": "1.3.1",
-    "prettier": "2.3.0"
+    "prettier": "2.3.2"
   }
 }
