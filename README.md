@@ -2,52 +2,53 @@
 
 ## Dockerized Wordpress Environment w/ MySQL
 
-### View Project Structure
+### Project Structure
+
+sth-docker
 
 .
-├── docker-compose.yaml
-└── README.md
+├── .gitignore
+├── LICENSE
+├── README.md
+└── docker-compose.yaml
 
 [_docker-compose.yaml_](docker-compose.yaml)
 
 ```yaml
 services:
-  db:
-    image: mysql:8.0.19
-    ...
   wordpress:
-    image: wordpress:latest
+    image: wordpress
+    restart: always
     ports:
       - 80:80
-    restart: always
+    volumes:
+      - ./wp:/var/www/html
     ...
+  db:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+    ...
+volumes:
+  db:
 ```
 
-If deployed, `docker-compose` will map port 81 of the Dockerized Wordpress container to port 81 of the host platform.
+If deployed, `docker-compose` will map port 80 of the Dockerized Wordpress container to port 80 of the host platform.
 
 ### Install WP Dependencies
 
 Everything is controlled with `docker-compose`.
 
 ```bash
-$ docker-compose up -d
-Creating network "wordpress-mysql_default" with the default driver
-Creating volume "wordpress-mysql_db_data" with default driver
-...
-Creating wordpress-mysql_db_1        ... done
-Creating wordpress-mysql_wordpress_1 ... done
+docker-compose up
 ```
 
 ### Test Project Configuration
 
 Check containers are running and the port mapping:
 
-```bash
-$ docker ps
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
-5fbb4181a069        wordpress:latest    "docker-entrypoint.s…"   35 seconds ago      Up 34 seconds       0.0.0.0:80->80/tcp    wordpress-mysql_wordpress_1
-e0884a8d444d        mysql:8.0.19        "docker-entrypoint.s…"   35 seconds ago      Up 34 seconds       3306/tcp, 33060/tcp   wordpress-mysql_db_1
-```
+Verify that a `wp` folder which contains the persistant filesystem has been created at the project root.
 
 Navigate to `http://localhost:80` in your web browser to access Wordpress. You should see the screen about the "famous 5-minute WP installation."
 
