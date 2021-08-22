@@ -1,12 +1,39 @@
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
+# ignore everything in the root except the "wp-content" directory.
+!wp-content/
 
-# Local History for Visual Studio Code
-.history/
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins", "plugins", "themes" directory
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore these plugins
+wp-content/plugins/hello.php
+
+# ignore specific themes
+wp-content/themes/twenty*/
+
+# ignore node dependency directories
+node_modules/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.venv
+pip-selfcheck.json
 
 # Logs
 logs
@@ -127,27 +154,26 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# ignore everything in the root except the "wp-content" directory.
-!wp-content/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
 
-# ignore everything in the "wp-content" directory, except:
-# "mu-plugins", "plugins", "themes" directory
-wp-content/*
-!wp-content/mu-plugins/
-!wp-content/plugins/
-!wp-content/themes/
+# Local History for Visual Studio Code
+.history/
 
-# ignore these plugins
-wp-content/plugins/hello.php
+*~
 
-# ignore specific themes
-wp-content/themes/twenty*/
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
 
-# ignore node dependency directories
-node_modules/
+# KDE directory preferences
+.directory
 
-# ignore log files and databases
-*.log
-*.sql
-*.sqlite
-*.htaccess
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*

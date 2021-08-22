@@ -5,6 +5,8 @@
 		}
 	],
 	"settings": {
-		"license.author": "STHCoders"
+		"license.author": "STHCoders",
+		"license.extension": "",
+		"license.year": "auto"
 	}
 }
